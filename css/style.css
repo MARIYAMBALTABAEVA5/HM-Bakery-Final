@@ -1,0 +1,29 @@
+* { box-sizing: border-box; }
+:root { color-scheme: light; --bg: #fff8ef; --surface: #fff; --text: #38251d; --accent: #894627; --line: #d9c5b6; }
+:root.dark { color-scheme: dark; --bg: #211a17; --surface: #332720; --text: #ffeddb; --accent: #efb58e; --line: #685044; }
+body { margin: 0; font: 1rem/1.6 system-ui, sans-serif; background: var(--bg); color: var(--text); }
+header, nav, footer { padding: 1rem max(5%, calc((100% - 1100px)/2)); background: var(--surface); }
+header, nav { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem; }
+header { justify-content: space-between; }
+.brand { font-size: 1.5rem; font-weight: bold; }
+a { color: var(--accent); }
+nav a { text-decoration: none; }
+nav a[aria-current] { font-weight: bold; text-decoration: underline; }
+main { width: min(90%, 1100px); margin: 2rem auto; min-height: 65vh; }
+h1, h2 { line-height: 1.25; }
+.hero, .grid { display: grid; gap: 1.25rem; align-items: center; }
+.hero { grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); }
+.grid { grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); align-items: stretch; }
+.item, form, #profile { background: var(--surface); padding: 1rem; border: 1px solid var(--line); border-radius: 10px; }
+img { display: block; width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 8px; }
+.item h2 { font-size: 1.1rem; }
+button, .button { display: inline-block; border: 1px solid var(--accent); border-radius: 6px; padding: .65rem 1rem; background: var(--surface); color: var(--accent); font: inherit; cursor: pointer; text-decoration: none; transition: transform .2s, background .2s, color .2s; }
+button:hover, .button:hover { transform: translateY(-2px); background: var(--accent); color: var(--bg); }
+form { max-width: 540px; }
+label { display: block; margin-bottom: .75rem; }
+input, textarea { display: block; width: 100%; max-width: 540px; padding: .65rem; border: 1px solid var(--line); border-radius: 5px; background: var(--bg); color: var(--text); font: inherit; }
+.error { color: #b42318; display: block; font-size: .9rem; }
+.dark .error { color: #ffb4a9; }
+[hidden] { display: none !important; }
+footer { text-align: center; }
+@media (prefers-reduced-motion: reduce) { button, .button { transition: none; } }
